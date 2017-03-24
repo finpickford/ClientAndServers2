@@ -30,6 +30,12 @@ class HelloServant extends HelloWorldPOA {
     	
     	return "Hello world!!";
         }
+    
+    public String reset() {
+    	parent.addMessage("relay reset.\n    Replying with message...\n\n");
+    	
+    	return "Camera reset!!";
+        }
 
 }
 

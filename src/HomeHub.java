@@ -77,9 +77,18 @@ class RelayServant extends RelayPOA {
     public String fetch_message() {
     	parent.addMessage("fetch_message called by client.  Calling server..\n");
     	
-    	System.out.println("done");
-
     	String messageFromServer = server.hello_world();
+
+    	parent.addMessage("message from server = " + messageFromServer + "\n"
+    			   + "   Now forwarding to client..\n\n");
+
+    	return messageFromServer;
+        }
+    
+    public String reset_status() {
+    	parent.addMessage("reset_status called by client.  Calling server..\n");
+    	
+    	String messageFromServer = server.reset();
 
     	parent.addMessage("message from server = " + messageFromServer + "\n"
     			   + "   Now forwarding to client..\n\n");

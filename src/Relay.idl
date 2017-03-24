@@ -4,9 +4,13 @@
 module ClientAndServer {
     interface Relay {
         string fetch_message();
+	string reset_status();
     };
 
     interface HelloWorld {
 	string hello_world();
-    };			
+	string reset();
+    };	
+
+		
 };

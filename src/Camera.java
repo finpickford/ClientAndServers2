@@ -82,7 +82,10 @@ public class Camera extends JFrame {
 	    buttonpanel = new JPanel();
 	    getItButton = new JButton("Alert Office");
 	    getItButton.addActionListener (new ActionListener() {
-		    public void actionPerformed (ActionEvent evt) {
+	
+	    	
+	    	public void actionPerformed (ActionEvent evt) {
+		    status.setText("Alert");
 			textarea.append("Calling relay...\n");
 			String result = relay.fetch_message();
 			textarea.append("   Result = " + result + "\n\n");
@@ -98,6 +101,9 @@ public class Camera extends JFrame {
 	    {
 		    public void actionPerformed (ActionEvent evt) {
 		    	status.setText("Okay");
+		    	textarea.append("Calling relay...\n");
+				String result = relay.reset_status();
+				textarea.append("   Result = " + result + "\n\n");
 		    }
 		});
 	  
